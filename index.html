@@ -3,80 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Manikanta</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('https://github.com/meibraransari/meibraransari.github.io/blob/main/Pictures/background.png?raw=true') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-        .container img {
-            width: 200px; /* Adjust the width to your desired size */
-            height: 200px; /* Adjust the height to your desired size */
-            border-radius: 50%;
-            border: 4px solid #fff; /* Adjust the border thickness and color */
-            margin-right: 20px;
-        }
-        .content {
-            text-align: left;
-        }
-        .content p {
-            font-size: 18px;
-            line-height: 1.6;
-            font-weight: bold;
-        }
-        .content a {
-            color: #ff6347; /* Tomato color */
-            text-decoration: none;
-        }
-        .content a:hover {
-            text-decoration: underline;
-        }
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        .social-links img {
-            width: 40px;
-            height: 40px;
-        }
-    </style>
+    <meta name="description" content="Ibrar Ansari - AI-inspired personal landing page and links hub. Explore social channels, DevOps projects, tech blog, and direct contact details.">
+    <meta name="author" content="Ibrar Ansari">
+    <title>Ibrar Ansari // AI Hub</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meibraransari.github.io/">
+    <meta property="og:title" content="Ibrar Ansari // AI Hub">
+    <meta property="og:description" content="Explore Ibrar Ansari's professional profiles, DevOps projects, tech blog, and interactive links in a futuristic, AI-inspired interface.">
+    <meta property="og:image" content="avatar.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://meibraransari.github.io/">
+    <meta property="twitter:title" content="Ibrar Ansari // AI Hub">
+    <meta property="twitter:description" content="Explore Ibrar Ansari's professional profiles, DevOps projects, tech blog, and interactive links in a futuristic, AI-inspired interface.">
+    <meta property="twitter:image" content="avatar.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="avatar.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>About Me</h1>
-    <div class="container">
-        <img src="https://github.com/meibraransari/meibraransari.github.io/blob/main/Pictures/Ibrar_Ansari.png?raw=true" alt="Manikanta">
-        <div class="content">
-            <p>
-                My name is Ibrar Ansari
-            </p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ansariibrar/"><img src="https://github.com/meibraransari/meibraransari.github.io/blob/main/Pictures/linkedin-icon.png?raw=true" alt="LinkedIn"></a>
-                <a href="https://github.com/meibraransari"><img src="https://github.com/meibraransari/meibraransari.github.io/blob/main/Pictures/github.png?raw=true" alt="GitHub"></a>
-                <a href="https://www.youtube.com/@DevOpsinAction"><img src="https://github.com/meibraransari/meibraransari.github.io/blob/main/Pictures/YouTube.png?raw=true" alt="YouTube"></a>
+    <!-- Ambient glowing blobs in background -->
+    <div class="bg-glow-container">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="glow-grid"></div>
+    </div>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">▲</span>
+                <span class="logo-text">Ibrar <span class="accent-text">Ansari</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#links" class="nav-link">Links</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="search-trigger-btn" id="searchTriggerNav" aria-label="Search links" title="Press '/' to search">
+                <i data-lucide="search"></i>
+                <span class="key-hint">/</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="avatar-container">
+                    <div class="avatar-ring-outer"></div>
+                    <div class="avatar-ring-inner"></div>
+                    <img src="avatar.png" alt="Ibrar Ansari" class="avatar-image">
+                    <span class="status-indicator"></span>
+                </div>
+                
+
+
+                <h1 class="hero-title">Ibrar Ansari</h1>
+                
+                <div class="typing-container">
+                    <span class="typing-prefix">❯ </span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">_</span>
+                </div>
+
+                <p class="hero-desc">
+                    Architecting robust DevOps automation pipelines and scalable cloud infrastructures. 
+                    Connecting modern technology stacks to build a faster, smarter future.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#links" class="btn btn-primary">
+                        <span class="btn-text">Explore My Links</span>
+                        <i data-lucide="arrow-down-right" class="btn-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Links Hub Section -->
+        <section id="links" class="links-section">
+            <div class="section-header">
+                <span class="section-tag">// NAVIGATIONAL_LINKS</span>
+                <h2 class="section-title">Decentralized Portal Hub</h2>
+                <p class="section-desc">Quick access to all digital interfaces, codebases, and social profiles. Press "/" anywhere to filter instantly.</p>
+            </div>
+
+            <!-- Search Panel -->
+            <div class="search-panel-container">
+                <div class="search-bar-wrapper glass-panel">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="linkSearchInput" placeholder="Filter portals (e.g. GitHub, Blog)..." autocomplete="off" aria-label="Search Links">
+                    <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search" style="display: none;">
+                        <i data-lucide="x"></i>
+                    </button>
+                    <span class="search-keyboard-hint">Press <strong>/</strong> to search</span>
+                </div>
+            </div>
+
+            <!-- Dynamic grid of links -->
+            <div class="links-grid" id="linksGrid">
+                
+                <!-- GitHub Card -->
+                <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="github code open source projects devops repositories version control">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-blue">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">GitHub</h3>
+                        <p class="card-desc">Explore public repositories, automation workflows, infrastructure-as-code, and personal projects.</p>
+                        <span class="card-subtext">meibraransari</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- LinkedIn Card -->
+                <a href="http://www.linkedin.com/in/ansariibrar" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="linkedin professional connect network career profile resume cv work">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-purple">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">LinkedIn</h3>
+                        <p class="card-desc">Connect with me professionally, view endorsements, career timelines, and corporate updates.</p>
+                        <span class="card-subtext">ansariibrar</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- YouTube Card -->
+                <a href="https://www.youtube.com/@DevOpsinAction?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="youtube video tutorials devops action channel guides docker kubernetes ci cd">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-pink">
+                                <path d="M23.498 6.163c-.272-1.016-1.071-1.815-2.087-2.087-1.838-.498-9.213-.498-9.213-.498s-7.375 0-9.213.498c-1.016.272-1.815 1.071-2.087 2.087-.498 1.838-.498 5.674-.498 5.674s0 3.836.498 5.674c.272 1.016 1.071 1.815 2.087 2.087 1.838.498 9.213.498 9.213.498s7.375 0 9.213-.498c1.016-.272 1.815-1.071 2.087-2.087.498-1.838.498-5.674.498-5.674s0-3.836-.498-5.674zm-14.16 8.358v-6.757l6.213 3.378-6.213 3.379z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">YouTube</h3>
+                        <p class="card-desc">Watch DevOps in Action tutorials, configuration guides, automation breakdowns, and system walkthroughs.</p>
+                        <span class="card-subtext">@DevOpsinAction</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Card -->
+                <a href="https://ibraransari.blogspot.com/" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="blog articles writeups tech news system design ibrar blogger lessons guides logs">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <i data-lucide="book-open" class="card-icon accent-cyan"></i>
+                        </div>
+                        <h3 class="card-title">Tech Blog</h3>
+                        <p class="card-desc">Read custom technical guides, research thoughts, challenges solved, and notes on cloud-native tools.</p>
+                        <span class="card-subtext">ibraransari.blogspot.com</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Telegram Card -->
+                <a href="https://t.me/DevOpsinActionTelegram" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="telegram chat support group channel community updates automation devs text">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <i data-lucide="send" class="card-icon accent-blue"></i>
+                        </div>
+                        <h3 class="card-title">Telegram</h3>
+                        <p class="card-desc">Join the DevOps in Action community. Find resources, direct discussions, and real-time updates.</p>
+                        <span class="card-subtext">@DevOpsinActionTelegram</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Docker Hub Card -->
+                <a href="https://hub.docker.com/u/ibraransaridocker" target="_blank" rel="noopener noreferrer" class="link-card glass-panel" data-tags="docker hub containers images build kubernetes registry packages dockerfile">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="card-icon-container">
+                            <i data-lucide="container" class="card-icon accent-purple"></i>
+                        </div>
+                        <h3 class="card-title">Docker Hub</h3>
+                        <p class="card-desc">Check out compiled container images, customized node environments, and microservice base images.</p>
+                        <span class="card-subtext">ibraransaridocker</span>
+                        <div class="card-arrow">
+                            <i data-lucide="arrow-up-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+
+
+
+
+            </div>
+
+            <!-- Search No Results fallback -->
+            <div id="noResultsMessage" class="no-results-panel glass-panel" style="display: none;">
+                <i data-lucide="alert-triangle" class="warning-icon"></i>
+                <h3>No Portals Found</h3>
+                <p>No connections matched your query. Try searching for "GitHub", "Blog", or "DevOps".</p>
+                <button id="resetSearchBtn" class="btn btn-secondary btn-sm">Reset Search</button>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <span class="section-tag">// IDENTITY_INDEX</span>
+                <h2 class="section-title">About The Ibrar</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content glass-panel">
+                    <div class="corner-accents">
+                        <div class="corner tl"></div>
+                        <div class="corner tr"></div>
+                        <div class="corner bl"></div>
+                        <div class="corner br"></div>
+                    </div>
+                    <h3>Who is Ibrar Ansari?</h3>
+                    <p>
+                        I am a passionate, self-driven DevOps Engineer and Cloud Operations Specialist focused on building high-performance automation pipelines and secure cloud architectures. By combining cutting-edge infrastructure-as-code patterns with sleek, interactive control dashboards, I design systems that run with high availability and execute reliably.
+                    </p>
+                    <p>
+                        My background centers around continuous integration and delivery (CI/CD), containerization (Docker & Kubernetes), cloud migration, and implementing clean, scalable infrastructure configurations. I believe the future belongs to autonomic agentic monitoring, GitOps automated workflows, and highly responsive management consoles.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">DevOps</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">CI/CD</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Ansible</span>
+                        <span class="tech-tag">Bash / Linux</span>
+                        <span class="tech-tag">Cloud Architecture</span>
+                    </div>
+                </div>
+
+                <!-- GitHub Stats Mini-Widget Panel -->
+                <div class="stats-panel glass-panel">
+                    <div class="stats-header">
+                        <i data-lucide="activity"></i>
+                        <span>GITHUB_METRICS_SIMULATED</span>
+                        <span class="status-pulse-green"></span>
+                    </div>
+                    <div class="stats-body">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Contributions (YTD)</span>
+                            <span class="stat-val accent-blue">1,482</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Active Repositories</span>
+                            <span class="stat-val accent-purple">48</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Automation Runs</span>
+                            <span class="stat-val accent-cyan">99.8% Success</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Core Specialization</span>
+                            <span class="stat-val accent-pink">Cloud Automation</span>
+                        </div>
+                    </div>
+                    <div class="stats-footer">
+                        <span>DATA SYNCED: SECURE_CHANNEL_1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <span class="logo-icon">▲</span>
+                <span>Ibrar <span class="accent-text">Ansari</span></span>
+            </div>
+            <div class="footer-badges">
+                <span class="badge badge-sm"><i data-lucide="container"></i> Docker & Kubernetes</span>
+                <span class="badge badge-sm"><i data-lucide="git-branch"></i> GitOps & Jenkins CI/CD</span>
+                <span class="badge badge-sm"><i data-lucide="cloud"></i> 1x AWS Certified</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Command Palette Modal -->
+    <dialog id="commandPalette" class="command-palette-dialog glass-panel">
+        <div class="command-palette-container">
+            <div class="palette-search-wrapper">
+                <i data-lucide="search" class="palette-search-icon"></i>
+                <input type="text" id="paletteSearchInput" placeholder="Type a command or portal name..." autocomplete="off">
+                <button class="palette-close-btn" id="paletteCloseBtn" aria-label="Close palette">
+                    <span class="key-hint">ESC</span>
+                </button>
+            </div>
+            <div class="palette-body">
+                <div class="palette-section-title">PORTALS / LINKS</div>
+                <ul class="palette-list" id="paletteList">
+                    <!-- Dynamic rendering of command items -->
+                </ul>
+            </div>
+            <div class="palette-footer">
+                <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select, <kbd>Esc</kbd> to dismiss.</span>
             </div>
         </div>
-    </div>
+    </dialog>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Main Script -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>

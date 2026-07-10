@@ -1,0 +1,13 @@
+{
+  "name": "ibrar-ansari-ai-hub",
+  "version": "2.0.0",
+  "description": "Futuristic AI-inspired personal landing page and links hub for Ibrar Ansari.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
