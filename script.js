@@ -392,24 +392,13 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    // Mouse events
-    window.addEventListener("mousedown", (e) => {
-        isDrawing = true;
-        points = [];
-        addPoint(e.clientX, e.clientY);
-    });
-
+    // Mouse events (draw trail on hover/move without clicking)
     window.addEventListener("mousemove", (e) => {
-        if (!isDrawing) return;
         addPoint(e.clientX, e.clientY);
-    });
-
-    window.addEventListener("mouseup", () => {
-        isDrawing = false;
     });
 
     window.addEventListener("mouseleave", () => {
-        isDrawing = false;
+        points = [];
     });
 
     // Touch events for mobile/tablet drag support
