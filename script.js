@@ -109,27 +109,45 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. Portals Live Filter Search
     const searchInput = document.getElementById("linkSearchInput");
     const searchClearBtn = document.getElementById("searchClearBtn");
-    const linksGrid = document.getElementById("linksGrid");
+    const linksGrids = document.querySelectorAll(".links-grid");
     const linkCards = document.querySelectorAll(".link-card");
     const noResultsMessage = document.getElementById("noResultsMessage");
     const resetSearchBtn = document.getElementById("resetSearchBtn");
 
     function filterCards(query) {
         const normalizedQuery = query.toLowerCase().trim();
-        let matches = 0;
+        let totalMatches = 0;
 
-        linkCards.forEach((card) => {
-            const cardTags = card.getAttribute("data-tags") || "";
-            const cardTitle = card.querySelector(".card-title")?.textContent || "";
-            const cardDesc = card.querySelector(".card-desc")?.textContent || "";
-            
-            const textToMatch = `${cardTags} ${cardTitle} ${cardDesc}`.toLowerCase();
+        const groups = document.querySelectorAll(".portal-group");
+        groups.forEach((group) => {
+            const cards = group.querySelectorAll(".link-card");
+            let groupMatches = 0;
 
-            if (textToMatch.includes(normalizedQuery)) {
-                card.style.display = "block";
-                matches++;
+            cards.forEach((card) => {
+                const cardTags = card.getAttribute("data-tags") || "";
+                const cardTitle = card.querySelector(".card-title")?.textContent || "";
+                const cardDesc = card.querySelector(".card-desc")?.textContent || "";
+                
+                const textToMatch = `${cardTags} ${cardTitle} ${cardDesc}`.toLowerCase();
+
+                if (textToMatch.includes(normalizedQuery)) {
+                    card.style.display = "block";
+                    groupMatches++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            const groupTitle = group.querySelector(".portal-group-title");
+            const grid = group.querySelector(".links-grid");
+
+            if (groupMatches === 0) {
+                if (groupTitle) groupTitle.style.display = "none";
+                if (grid) grid.style.display = "none";
             } else {
-                card.style.display = "none";
+                if (groupTitle) groupTitle.style.display = "flex";
+                if (grid) grid.style.display = "grid";
+                totalMatches += groupMatches;
             }
         });
 
@@ -137,13 +155,13 @@ document.addEventListener("DOMContentLoaded", () => {
             searchClearBtn.style.display = normalizedQuery.length > 0 ? "flex" : "none";
         }
 
-        if (noResultsMessage && linksGrid) {
-            if (matches === 0) {
+        if (noResultsMessage) {
+            if (totalMatches === 0) {
                 noResultsMessage.style.display = "block";
-                linksGrid.style.opacity = "0.4";
+                linksGrids.forEach(grid => grid.style.opacity = "0.4");
             } else {
                 noResultsMessage.style.display = "none";
-                linksGrid.style.opacity = "1";
+                linksGrids.forEach(grid => grid.style.opacity = "1");
             }
         }
     }
