@@ -187,8 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { title: "Technical Skills", sub: "Tools & Technologies", url: "#skills", icon: "cpu" },
             { title: "Work Experience", sub: "9+ Years Career Timeline", url: "#experience", icon: "briefcase" },
             { title: "Certifications", sub: "AWS & Ivanti Credentials", url: "#certifications", icon: "award" },
-            { title: "Digital Portals", sub: "Links Hub", url: "#portals", icon: "link" },
-            { title: "Contact", sub: "Get in Touch", url: "#contact", icon: "mail" }
+            { title: "Digital Portals", sub: "Links Hub", url: "#portals", icon: "link" }
         ];
 
         linkCards.forEach((card) => {
