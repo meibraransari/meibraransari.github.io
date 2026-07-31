@@ -1,142 +1,112 @@
 /**
- * Ibrar Ansari AI Landing Page - Main Script
- * Version: 2.0.0
- * Author: Ibrar Ansari
+ * Ibrar Ansari Portfolio & Links Hub - Main Script
+ * Optimized for maximum performance (0 lag, 60fps)
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Initialize Lucide Icons
+    // 1. Initialize Lucide Icons
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    /* ==========================================================================
-       CUSTOM CURSOR & SPOTLIGHT EFFECT
-       ========================================================================== */
-    const cursorGlow = document.getElementById("cursorGlow");
-    const cursorDot = document.getElementById("cursorDot");
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-    if (!isMobile) {
-        document.addEventListener("mousemove", (e) => {
-            // Use requestAnimationFrame for smoother cursor tracking
-            window.requestAnimationFrame(() => {
-                cursorGlow.style.left = `${e.clientX}px`;
-                cursorGlow.style.top = `${e.clientY}px`;
-                cursorDot.style.left = `${e.clientX}px`;
-                cursorDot.style.top = `${e.clientY}px`;
-            });
-        });
-
-        // Add hover effects for custom cursor
-        const interactiveElements = document.querySelectorAll(
-            "a, button, input, select, textarea, [role='button'], .palette-item, .link-card"
-        );
-
-        interactiveElements.forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-                document.body.classList.add("cursor-hover");
-            });
-            el.addEventListener("mouseleave", () => {
-                document.body.classList.remove("cursor-hover");
-            });
-        });
-    }
-
-    /* ==========================================================================
-       SCROLL PERFORMANCE, SCROLLBARS & ACTIVE STATE
-       ========================================================================== */
+    // 2. Scroll Progress & Navbar Scrolled Class
     const navbar = document.getElementById("navbar");
     const scrollProgress = document.getElementById("scrollProgress");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section");
-
-    window.addEventListener("scroll", () => {
+    
+    function updateScrollState() {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         
-        // Update Scroll Progress Bar
-        scrollProgress.style.width = `${scrollPercent}%`;
-
-        // Sticky Navbar background blur & styling
-        if (scrollTop > 20) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
+        if (scrollProgress) {
+            scrollProgress.style.width = `${scrollPercent}%`;
         }
 
-        // Active navigation link update based on scroll position
-        let currentSectionId = "";
-        sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
-                currentSectionId = section.getAttribute("id");
+        if (navbar) {
+            if (scrollTop > 20) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    updateScrollState();
+
+    // 3. Intersection Observer for Navigation Links Active State
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
+
+    const sectionObserverOptions = {
+        root: null,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${id}`) {
+                        link.classList.add("active");
+                    }
+                });
             }
         });
+    }, sectionObserverOptions);
 
-        if (currentSectionId) {
-            navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${currentSectionId}`) {
-                    link.classList.add("active");
-                }
-            });
-        }
-    });
+    sections.forEach(section => sectionObserver.observe(section));
 
-    /* ==========================================================================
-       HERO TYPING ANIMATION
-       ========================================================================== */
+    // 4. Hero Section Typing Effect
     const typingText = document.getElementById("typingText");
     const phrases = [
-        "Building Ideas...",
-        "Creating AI Experiences...",
-        "Learning Everyday...",
-        "Open Source Enthusiast...",
-        "Exploring Future Technology..."
+        "Lead System Administrator",
+        "DevOps & Cloud Specialist",
+        "AWS & Docker Architect",
+        "VMware & Linux Administrator",
+        "Ivanti Certified Engineer"
     ];
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typeSpeed = 100;
+    let typeSpeed = 90;
 
-    function type() {
+    function handleTyping() {
+        if (!typingText) return;
+        
         const currentPhrase = phrases[phraseIndex];
         
         if (isDeleting) {
             typingText.textContent = currentPhrase.substring(0, charIndex - 1);
             charIndex--;
-            typeSpeed = 40; // delete faster
+            typeSpeed = 40;
         } else {
             typingText.textContent = currentPhrase.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 80; // normal typing speed
+            typeSpeed = 80;
         }
 
         if (!isDeleting && charIndex === currentPhrase.length) {
-            typeSpeed = 2000; // Pause at full phrase
+            typeSpeed = 2200; // Pause at end of full phrase
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 400; // Pause before typing next phrase
+            typeSpeed = 350;
         }
 
-        setTimeout(type, typeSpeed);
+        setTimeout(handleTyping, typeSpeed);
     }
     
     if (typingText) {
-        type();
+        handleTyping();
     }
 
-
-
-    /* ==========================================================================
-       CARD SEARCH / PORTAL FILTERS
-       ========================================================================== */
+    // 5. Portals Live Filter Search
     const searchInput = document.getElementById("linkSearchInput");
     const searchClearBtn = document.getElementById("searchClearBtn");
     const linksGrid = document.getElementById("linksGrid");
@@ -163,20 +133,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Toggle clear button visibility
-        if (query.length > 0) {
-            searchClearBtn.style.display = "flex";
-        } else {
-            searchClearBtn.style.display = "none";
+        if (searchClearBtn) {
+            searchClearBtn.style.display = normalizedQuery.length > 0 ? "flex" : "none";
         }
 
-        // Toggle no results display
-        if (matches === 0) {
-            noResultsMessage.style.display = "block";
-            linksGrid.style.opacity = "0.5";
-        } else {
-            noResultsMessage.style.display = "none";
-            linksGrid.style.opacity = "1";
+        if (noResultsMessage && linksGrid) {
+            if (matches === 0) {
+                noResultsMessage.style.display = "block";
+                linksGrid.style.opacity = "0.4";
+            } else {
+                noResultsMessage.style.display = "none";
+                linksGrid.style.opacity = "1";
+            }
         }
     }
 
@@ -185,26 +153,24 @@ document.addEventListener("DOMContentLoaded", () => {
             filterCards(e.target.value);
         });
 
-        searchClearBtn.addEventListener("click", () => {
+        if (searchClearBtn) {
+            searchClearBtn.addEventListener("click", () => {
+                searchInput.value = "";
+                filterCards("");
+                searchInput.focus();
+            });
+        }
+    }
+
+    if (resetSearchBtn && searchInput) {
+        resetSearchBtn.addEventListener("click", () => {
             searchInput.value = "";
             filterCards("");
             searchInput.focus();
         });
     }
 
-    if (resetSearchBtn) {
-        resetSearchBtn.addEventListener("click", () => {
-            if (searchInput) {
-                searchInput.value = "";
-                filterCards("");
-                searchInput.focus();
-            }
-        });
-    }
-
-    /* ==========================================================================
-       COMMAND PALETTE & DIALOG CONFIGURATION
-       ========================================================================== */
+    // 6. Command Palette Dialog logic
     const commandPalette = document.getElementById("commandPalette");
     const paletteSearchInput = document.getElementById("paletteSearchInput");
     const paletteList = document.getElementById("paletteList");
@@ -212,44 +178,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchTriggerNav = document.getElementById("searchTriggerNav");
     
     let paletteItems = [];
-    let selectedPaletteIndex = 0;
+    let selectedIndex = 0;
 
-    // Dynamically compile portal entries from cards
-    function compilePaletteItems() {
-        paletteItems = [];
+    function buildPaletteItems() {
+        paletteItems = [
+            { title: "Home", sub: "Hero Overview", url: "#home", icon: "home" },
+            { title: "About Me", sub: "Background & Profile", url: "#about", icon: "user" },
+            { title: "Technical Skills", sub: "Tools & Technologies", url: "#skills", icon: "cpu" },
+            { title: "Work Experience", sub: "9+ Years Career Timeline", url: "#experience", icon: "briefcase" },
+            { title: "Certifications", sub: "AWS & Ivanti Credentials", url: "#certifications", icon: "award" },
+            { title: "Digital Portals", sub: "Links Hub", url: "#portals", icon: "link" },
+            { title: "Contact", sub: "Get in Touch", url: "#contact", icon: "mail" }
+        ];
+
         linkCards.forEach((card) => {
-            // Skip pure widget items
-            if (card.classList.contains("custom-hud-widget")) return;
-
             const title = card.querySelector(".card-title")?.textContent || "Link";
-            const subtext = card.querySelector(".card-subtext")?.textContent || "";
-            // Extract the entire inner HTML of the icon container to preserve inline SVGs
-            const iconHtml = card.querySelector(".card-icon-container")?.innerHTML || `<i data-lucide="link"></i>`;
+            const sub = card.querySelector(".card-subtext")?.textContent || "";
             const url = card.getAttribute("href") || "#";
-            
-            paletteItems.push({
-                title,
-                subtext,
-                iconHtml,
-                url
-            });
+            paletteItems.push({ title, sub, url, icon: "external-link" });
         });
     }
 
-    function renderPalette(filterText = "") {
-        const cleanFilter = filterText.toLowerCase().trim();
+    function renderPalette(query = "") {
+        if (!paletteList) return;
+        const cleanQuery = query.toLowerCase().trim();
         paletteList.innerHTML = "";
         
         const filtered = paletteItems.filter(item => 
-            item.title.toLowerCase().includes(cleanFilter) || 
-            item.subtext.toLowerCase().includes(cleanFilter)
+            item.title.toLowerCase().includes(cleanQuery) || 
+            item.sub.toLowerCase().includes(cleanQuery)
         );
 
         if (filtered.length === 0) {
             paletteList.innerHTML = `
                 <li class="palette-item" style="cursor: default; opacity: 0.6;">
                     <i data-lucide="alert-circle"></i>
-                    <span>No matching portals found</span>
+                    <span>No results found</span>
                 </li>`;
             if (typeof lucide !== 'undefined') lucide.createIcons();
             return;
@@ -257,35 +221,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filtered.forEach((item, index) => {
             const li = document.createElement("li");
-            li.className = `palette-item ${index === selectedPaletteIndex ? 'selected' : ''}`;
+            li.className = `palette-item ${index === selectedIndex ? 'selected' : ''}`;
             li.innerHTML = `
-                <div class="palette-item-icon-wrapper">${item.iconHtml}</div>
+                <div class="palette-item-icon-wrapper"><i data-lucide="${item.icon}"></i></div>
                 <span>${item.title}</span>
-                <span class="item-sub">${item.subtext}</span>
+                <span class="item-sub">${item.sub}</span>
             `;
             
             li.addEventListener("click", () => {
-                openPortalUrl(item.url);
+                executePaletteItem(item.url);
             });
 
             paletteList.appendChild(li);
         });
 
-        // Trigger icon rendering for newly created DOM nodes
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        if (typeof lucide !== 'undefined') lucide.createIcons();
 
-        // Auto scroll to active selection
-        const selectedElement = paletteList.querySelector(".palette-item.selected");
-        if (selectedElement) {
-            selectedElement.scrollIntoView({ block: "nearest" });
+        const activeEl = paletteList.querySelector(".palette-item.selected");
+        if (activeEl) {
+            activeEl.scrollIntoView({ block: "nearest" });
         }
     }
 
-    function openPortalUrl(url) {
+    function executePaletteItem(url) {
         closePalette();
-        if (url.startsWith("mailto:")) {
+        if (url.startsWith("#")) {
+            const targetEl = document.querySelector(url);
+            if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
+        } else if (url.startsWith("mailto:")) {
             window.location.href = url;
         } else {
             window.open(url, "_blank", "noopener,noreferrer");
@@ -293,72 +256,70 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function openPalette() {
-        compilePaletteItems();
-        selectedPaletteIndex = 0;
-        paletteSearchInput.value = "";
+        if (!commandPalette) return;
+        buildPaletteItems();
+        selectedIndex = 0;
+        if (paletteSearchInput) paletteSearchInput.value = "";
         renderPalette();
         commandPalette.showModal();
-        setTimeout(() => paletteSearchInput.focus(), 50);
-        document.body.style.overflow = "hidden"; // disable scroll
+        setTimeout(() => paletteSearchInput?.focus(), 50);
+        document.body.style.overflow = "hidden";
     }
 
     function closePalette() {
+        if (!commandPalette) return;
         commandPalette.close();
-        document.body.style.overflow = ""; // enable scroll
+        document.body.style.overflow = "";
     }
 
-    if (searchTriggerNav) {
-        searchTriggerNav.addEventListener("click", openPalette);
+    if (searchTriggerNav) searchTriggerNav.addEventListener("click", openPalette);
+    if (paletteCloseBtn) paletteCloseBtn.addEventListener("click", closePalette);
+
+    if (commandPalette) {
+        commandPalette.addEventListener("click", (e) => {
+            const rect = commandPalette.getBoundingClientRect();
+            const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+              rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+            if (!isInDialog) closePalette();
+        });
     }
-    if (paletteCloseBtn) {
-        paletteCloseBtn.addEventListener("click", closePalette);
-    }
 
-    // Close on overlay backdrop clicks
-    commandPalette.addEventListener("click", (e) => {
-        const rect = commandPalette.getBoundingClientRect();
-        const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
-          rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
-        if (!isInDialog) {
-            closePalette();
-        }
-    });
+    if (paletteSearchInput) {
+        paletteSearchInput.addEventListener("input", (e) => {
+            selectedIndex = 0;
+            renderPalette(e.target.value);
+        });
 
-    paletteSearchInput.addEventListener("input", (e) => {
-        selectedPaletteIndex = 0;
-        renderPalette(e.target.value);
-    });
+        paletteSearchInput.addEventListener("keydown", (e) => {
+            const items = paletteList.querySelectorAll(".palette-item:not([style*='cursor: default'])");
+            if (items.length === 0) return;
 
-    // Keyboard navigation inside Palette dialog
-    paletteSearchInput.addEventListener("keydown", (e) => {
-        const items = paletteList.querySelectorAll(".palette-item:not([style*='cursor: default'])");
-        if (items.length === 0) return;
-
-        if (e.key === "ArrowDown") {
-            e.preventDefault();
-            selectedPaletteIndex = (selectedPaletteIndex + 1) % items.length;
-            renderPalette(paletteSearchInput.value);
-        } else if (e.key === "ArrowUp") {
-            e.preventDefault();
-            selectedPaletteIndex = (selectedPaletteIndex - 1 + items.length) % items.length;
-            renderPalette(paletteSearchInput.value);
-        } else if (e.key === "Enter") {
-            e.preventDefault();
-            const cleanFilter = paletteSearchInput.value.toLowerCase().trim();
-            const filtered = paletteItems.filter(item => 
-                item.title.toLowerCase().includes(cleanFilter) || 
-                item.subtext.toLowerCase().includes(cleanFilter)
-            );
-            if (filtered[selectedPaletteIndex]) {
-                openPortalUrl(filtered[selectedPaletteIndex].url);
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                selectedIndex = (selectedIndex + 1) % items.length;
+                renderPalette(paletteSearchInput.value);
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+                renderPalette(paletteSearchInput.value);
+            } else if (e.key === "Enter") {
+                e.preventDefault();
+                const cleanQuery = paletteSearchInput.value.toLowerCase().trim();
+                const filtered = paletteItems.filter(item => 
+                    item.title.toLowerCase().includes(cleanQuery) || 
+                    item.sub.toLowerCase().includes(cleanQuery)
+                );
+                if (filtered[selectedIndex]) {
+                    executePaletteItem(filtered[selectedIndex].url);
+                }
             }
-        }
-    });
+        });
+    }
 
-    // Global keyboard shortcuts listener
+    // Global Keydown Listener for '/' Shortcut
     document.addEventListener("keydown", (e) => {
-        // Toggle palette using '/' key
-        if (e.key === "/" && document.activeElement !== searchInput && 
+        if (e.key === "/" && 
+            document.activeElement !== searchInput && 
             document.activeElement !== paletteSearchInput && 
             document.activeElement.tagName !== "INPUT" && 
             document.activeElement.tagName !== "TEXTAREA") {
@@ -366,115 +327,5 @@ document.addEventListener("DOMContentLoaded", () => {
             openPalette();
         }
     });
-
-    /* ==========================================================================
-       EXCALIDRAW-STYLE LASER POINTER TRAIL
-       ========================================================================== */
-    const canvas = document.createElement("canvas");
-    canvas.id = "laserCanvas";
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "99999";
-    document.body.appendChild(canvas);
-
-    const ctx = canvas.getContext("2d");
-    let points = [];
-    let isDrawing = false;
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-
-    // Mouse events (draw trail on hover/move without clicking)
-    window.addEventListener("mousemove", (e) => {
-        addPoint(e.clientX, e.clientY);
-    });
-
-    window.addEventListener("mouseleave", () => {
-        points = [];
-    });
-
-    // Touch events for mobile/tablet drag support
-    window.addEventListener("touchstart", (e) => {
-        isDrawing = true;
-        points = [];
-        const touch = e.touches[0];
-        addPoint(touch.clientX, touch.clientY);
-    });
-
-    window.addEventListener("touchmove", (e) => {
-        if (!isDrawing) return;
-        const touch = e.touches[0];
-        addPoint(touch.clientX, touch.clientY);
-    });
-
-    window.addEventListener("touchend", () => {
-        isDrawing = false;
-    });
-
-    function addPoint(x, y) {
-        points.push({
-            x: x,
-            y: y,
-            time: Date.now()
-        });
-    }
-
-    const TRAIL_LIFETIME = 400; // ms
-
-    function animateLaser() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        const now = Date.now();
-        points = points.filter(p => now - p.time < TRAIL_LIFETIME);
-
-        if (points.length > 1) {
-            // Draw outer neon cyan glow
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = "rgba(6, 182, 212, 0.8)";
-            ctx.lineCap = "round";
-            ctx.lineJoin = "round";
-
-            for (let i = 1; i < points.length; i++) {
-                const p1 = points[i - 1];
-                const p2 = points[i];
-                const ageRatio = (now - p2.time) / TRAIL_LIFETIME;
-                const opacity = 1 - ageRatio;
-                const width = 5 * (1 - ageRatio);
-
-                ctx.beginPath();
-                ctx.moveTo(p1.x, p1.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
-                ctx.lineWidth = width;
-                ctx.stroke();
-            }
-
-            // Draw inner bright white core
-            ctx.shadowBlur = 0;
-            for (let i = 1; i < points.length; i++) {
-                const p1 = points[i - 1];
-                const p2 = points[i];
-                const ageRatio = (now - p2.time) / TRAIL_LIFETIME;
-                const opacity = 1 - ageRatio;
-                const width = 1.5 * (1 - ageRatio);
-
-                ctx.beginPath();
-                ctx.moveTo(p1.x, p1.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.85})`;
-                ctx.lineWidth = width;
-                ctx.stroke();
-            }
-        }
-        requestAnimationFrame(animateLaser);
-    }
-    requestAnimationFrame(animateLaser);
 
 });
