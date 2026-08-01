@@ -352,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { title: "Certifications", sub: "Professional Credentials", url: "#honors", icon: "award" },
             { title: "Technical Skills", sub: "Tech Stack & Tooling", url: "#skills", icon: "cpu" },
             { title: "Career Journey", sub: "Timeline & Positions", url: "#experience", icon: "briefcase" },
-            { title: "Things I've Built", sub: "Open Source Portals", url: "#projects", icon: "grid" },
+            { title: "Things I've Built and Contributed", sub: "Open Source Portals", url: "#projects", icon: "grid" },
             { title: "Writing & Channels", sub: "Blogger & YouTube", url: "#writing", icon: "book-open" },
             { title: "Get In Touch", sub: "Contact Terminal", url: "#contact", icon: "send" }
         ];
