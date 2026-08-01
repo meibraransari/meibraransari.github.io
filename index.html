@@ -1,762 +1,614 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ibrar Ansari - Lead System Administrator & DevOps Engineer. 9+ years of experience in AWS, Docker, Kubernetes, VMware ESXi, Ivanti UEM, and Linux/Windows infrastructure.">
+    <meta name="theme-color" content="#010409">
+
+    <title>Ibrar Ansari | Lead System Administrator & DevOps Engineer</title>
+    <meta name="description" content="Ibrar Ansari is an experienced Lead System Administrator and DevOps Engineer with over 9 years of hands-on experience in AWS, Docker, VMware ESXi, Ivanti UEM, and Linux/Windows infrastructure.">
     <meta name="author" content="Ibrar Ansari">
-    <title>Ibrar Ansari // Lead System Administrator & DevOps Engineer</title>
-    
+    <link rel="canonical" href="https://meibraransari.github.io/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23010409%22/><text x=%2215%22 y=%2270%22 font-family=%22monospace%22 font-weight=%22bold%22 font-size=%2260%22 fill=%22%2358a6ff%22>&gt;_</text></svg>">
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meibraransari.github.io/">
-    <meta property="og:title" content="Ibrar Ansari // Lead System Administrator & DevOps Engineer">
-    <meta property="og:description" content="Explore Ibrar Ansari's professional experience, DevOps engineering projects, enterprise IT achievements, tech blog, and interactive link hub.">
+    <meta property="og:title" content="Ibrar Ansari | Lead System Administrator & DevOps Engineer">
+    <meta property="og:description" content="Explore Ibrar Ansari's professional experience, DevOps engineering projects, enterprise IT achievements, and interactive link hub.">
     <meta property="og:image" content="avatar.png">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://meibraransari.github.io/">
-    <meta property="twitter:title" content="Ibrar Ansari // Lead System Administrator & DevOps Engineer">
-    <meta property="twitter:description" content="Explore Ibrar Ansari's professional experience, DevOps engineering projects, enterprise IT achievements, tech blog, and interactive link hub.">
-    <meta property="twitter:image" content="avatar.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="avatar.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@meibraransari">
+    <meta name="twitter:title" content="Ibrar Ansari | Lead System Administrator & DevOps Engineer">
+    <meta name="twitter:description" content="Explore Ibrar Ansari's professional experience, DevOps engineering projects, enterprise IT achievements, and interactive link hub.">
+    <meta name="twitter:image" content="avatar.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Feather Icons CDN -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+
+    <!-- JSON-LD: Person schema for richer search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ibrar Ansari",
+      "url": "https://meibraransari.github.io",
+      "jobTitle": "Lead System Administrator & DevOps Engineer",
+      "image": "https://meibraransari.github.io/avatar.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "worksFor": { "@type": "Organization", "name": "IConflux Technologies" },
+      "sameAs": [
+        "https://github.com/meibraransari",
+        "https://www.linkedin.com/in/ansariibrar",
+        "https://www.youtube.com/@DevOpsinAction",
+        "https://ibraransari.blogspot.com/"
+      ],
+      "award": ["Ivanti Certified Unified Endpoint Management Professional", "Ivanti Certified Automation Specialist"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Certified Solutions Architect – Associate",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Ivanti Certified UEM Professional",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "Ivanti" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Ivanti Certified Automation Specialist",
+          "credentialCategory": "certification",
+          "recognizedBy": { "@type": "Organization", "name": "Ivanti" }
+        }
+      ],
+      "knowsAbout": ["AWS", "Docker", "Kubernetes", "VMware ESXi", "Ivanti UEM", "Ivanti Automation", "Linux Administration", "Windows Server", "Active Directory", "Databases (MySQL, MSSQL, PostgreSQL, MongoDB)", "Web Server (Apache, Nginx, IIS)", "PowerShell/Bash Scripting", "SonicWALL UTM Firewalls", "CI/CD", "cPanel/WHM/Plesk"]
+    }
+    </script>
 </head>
 <body>
-    <!-- Background Ambient Glow (GPU-Accelerated) -->
-    <div class="bg-glow-container" aria-hidden="true">
-        <div class="glow-orb orb-primary"></div>
-        <div class="glow-orb orb-secondary"></div>
-        <canvas id="interactive-glow"></canvas>
-        <div class="bg-grid-overlay"></div>
-    </div>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollProgress"></div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-badge">IA</span>
-                <span class="logo-text">Ibrar <span class="accent-text">Ansari</span></span>
-            </a>
-            
-            <nav class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#portals" class="nav-link">Portals</a>
-            </nav>
-
-            <div class="nav-actions">
-                <button class="search-trigger-btn" id="searchTriggerNav" title="Press '/' to search portals">
-                    <i data-lucide="search"></i>
-                    <span class="key-hint">/</span>
-                </button>
-                <a href="http://www.linkedin.com/in/ansariibrar" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
-                    <span>LinkedIn Profile</span>
-                    <i data-lucide="external-link"></i>
-                </a>
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-bg-color/80 backdrop-blur-md border-b border-border-color">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center font-fira" aria-label="Primary">
+            <a href="#" class="text-lg font-bold text-white">IBRAR ANSARI</a>
+            <div class="hidden md:flex space-x-6 text-sm">
+                <a href="#about" data-key="ga" class="text-gray-400 hover:text-primary-color transition-colors">./about</a>
+                <a href="#honors" data-key="gh" class="text-gray-400 hover:text-primary-color transition-colors">./certifications</a>
+                <a href="#skills" data-key="gs" class="text-gray-400 hover:text-primary-color transition-colors">./skills</a>
+                <a href="#experience" data-key="ge" class="text-gray-400 hover:text-primary-color transition-colors">./experience</a>
+                <a href="#projects" data-key="gp" class="text-gray-400 hover:text-primary-color transition-colors">./projects</a>
+                <a href="#writing" data-key="gw" class="text-gray-400 hover:text-primary-color transition-colors">./community</a>
+                <a href="#contact" data-key="gc" class="text-gray-400 hover:text-primary-color transition-colors">./contact</a>
             </div>
+            <div id="navSearchBadge" class="hidden lg:flex items-center gap-2 text-xs border border-border-color bg-panel-color px-2.5 py-1 rounded-md text-gray-400 hover:text-white hover:border-primary-color transition-colors cursor-pointer" title="Click to open command palette">
+                <span>Press</span>
+                <kbd class="kbd bg-terminal-header border border-border-color text-xs px-1 rounded text-white" style="font-family: monospace;">/</kbd>
+                <span>to search</span>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                <i data-feather="menu" class="w-6 h-6 text-white"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-terminal-header/90 font-fira">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./about</a>
+            <a href="#honors" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./certifications</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./skills</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./experience</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./projects</a>
+            <a href="#writing" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./community</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-primary-color/10">./contact</a>
         </div>
     </header>
 
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-profile">
-                    <div class="avatar-wrapper">
-                        <div class="avatar-ring"></div>
-                        <img src="avatar.png" alt="Ibrar Ansari" class="avatar-img">
-                        <span class="status-indicator" title="Available for DevOps & Infrastructure Roles">
-                            <span class="status-pulse"></span>
-                        </span>
-                    </div>
-                    <div class="availability-badge">
-                        <span class="status-dot"></span>
-                        <span>Lead System Administrator & DevOps Engineer</span>
-                    </div>
-                </div>
-                
-                <h1 class="hero-title">Ibrar Ansari</h1>
-                
-                <div class="typing-container">
-                    <span class="typing-prefix">❯ </span>
-                    <span class="typing-text" id="typingText"></span>
-                    <span class="typing-cursor">_</span>
-                </div>
+    <!-- Hero Section -->
+    <main id="main" class="relative container mx-auto px-6 py-20 md:py-32 overflow-hidden">
+        <!-- Decorative orbs -->
+        <div class="orb orb-blue w-72 h-72 -top-16 -left-16 opacity-70" aria-hidden="true"></div>
+        <div class="orb orb-purple w-72 h-72 top-40 right-0 opacity-60" aria-hidden="true"></div>
 
-                <p class="hero-desc">
-                    9+ years of proven expertise in architecting high-availability IT infrastructure, 
-                    AWS cloud environments, Docker containers, VMware virtualization, and enterprise endpoint management.
+        <div class="grid lg:grid-cols-12 gap-10 items-center relative z-10">
+            <div class="lg:col-span-7">
+                <div class="status-pill mb-6">
+                    <span class="dot"></span>
+                    Currently Lead System Administrator @ IConflux Technologies
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white">
+                    Hi, I'm <span class="gradient-text">Ibrar Ansari</span>.
+                </h1>
+                <p class="font-fira text-lg md:text-xl text-gray-300 mt-6 min-h-[2.5rem]">
+                    <span class="text-green-color">$</span>
+                    <span id="typing-text" aria-live="polite"></span><span class="typing-cursor" aria-hidden="true"></span>
                 </p>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">9+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">AWS & Ivanti</span>
-                        <span class="stat-label">Certified Specialist</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-number">3+</span>
-                        <span class="stat-label">Enterprise Organizations</span>
-                    </div>
-                </div>
-
-                <div class="hero-ctas">
-                    <a href="#experience" class="btn btn-primary">
-                        <i data-lucide="briefcase"></i>
-                        <span>View Experience</span>
+                <p class="text-base md:text-lg text-gray-400 mt-6 max-w-2xl leading-relaxed">
+                    Over <span class="text-primary-color font-semibold">9+ years</span> of proven expertise in architecting high-availability IT infrastructures, AWS environments, Docker containerization, VMware/Proxmox virtualization, and enterprise endpoint administration.
+                </p>
+                <div class="mt-10 flex flex-wrap items-center gap-3">
+                    <a href="#contact" class="btn btn-primary">
+                        <i data-feather="send" class="w-4 h-4"></i> Get in touch
                     </a>
-                    <a href="#portals" class="btn btn-secondary">
-                        <i data-lucide="layout-grid"></i>
-                        <span>Explore Portals</span>
+                    <a href="#experience" class="btn btn-ghost">
+                        <i data-feather="briefcase" class="w-4 h-4"></i> View Experience
                     </a>
-                    <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                        <i data-lucide="github"></i>
-                        <span>GitHub</span>
+                    <a href="#projects" class="btn btn-ghost">
+                        <i data-feather="grid" class="w-4 h-4"></i> Explore Portals
+                    </a>
+                    <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                        <i data-feather="github" class="w-4 h-4"></i> GitHub
                     </a>
                 </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="section-padding">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-badge"><i data-lucide="user"></i> Overview</div>
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Delivering robust, secure, and scalable cloud & infrastructure solutions.</p>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-card glass-card">
-                        <h3><i data-lucide="terminal" class="accent-cyan"></i> Professional Profile</h3>
-                        <p>
-                            I am an experienced Lead System Administrator and DevOps Engineer with over 9 years of hands-on experience in information technology. I specialize in cloud infrastructure architecture (AWS & DigitalOcean), containerization (Docker), continuous integration & delivery (CI/CD), virtualization (VMware ESXi), web hosting server management (WHM/cPanel/Plesk), and enterprise endpoint management (Ivanti UEM suite).
-                        </p>
-                        <p>
-                            Throughout my career across major IT organizations in India and Dubai (UAE), I have successfully built and managed multi-location IT infrastructures, automated backup and recovery systems for enterprise databases (MySQL, MSSQL, PostgreSQL, MongoDB), configured advanced firewalls, and optimized server runtimes for high availability.
-                        </p>
-                        <div class="about-highlights">
-                            <div class="highlight-pill"><i data-lucide="check-circle-2"></i> Quick Learner & Solution Provider</div>
-                            <div class="highlight-pill"><i data-lucide="check-circle-2"></i> Multi-Location Infrastructure Management</div>
-                            <div class="highlight-pill"><i data-lucide="check-circle-2"></i> AWS Cloud Architecture & Security</div>
-                            <div class="highlight-pill"><i data-lucide="check-circle-2"></i> Container & Virtualization Specialist</div>
-                        </div>
+            <div class="lg:col-span-5">
+                <div class="terminal-window" style="position: relative; overflow: hidden; border-top-color: transparent;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #00d2ff 0%, #a371f7 100%);"></div>
+                    <div class="terminal-header" aria-hidden="true" style="padding-top: 1rem;">
+                        <div class="terminal-button bg-red-500"></div>
+                        <div class="terminal-button bg-yellow-500"></div>
+                        <div class="terminal-button bg-green-500"></div>
+                        <span class="ml-3 font-fira text-xs text-gray-400">~/whoami.sh</span>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Matrix Section -->
-        <section id="skills" class="section-padding alt-bg">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-badge"><i data-lucide="cpu"></i> Expertise</div>
-                    <h2 class="section-title">Technical Skills & Tools</h2>
-                    <p class="section-subtitle">Comprehensive stack of tools and technologies I work with daily.</p>
-                </div>
-
-                <div class="skills-grid">
-                    <!-- Cloud & DevOps -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="cloud" class="skill-icon accent-blue"></i>
-                            <h3>Cloud & DevOps</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">AWS (EC2, S3, IAM, VPC)</span>
-                            <span class="tag">CloudWatch & RDS</span>
-                            <span class="tag">Route 53 & SNS/SQS</span>
-                            <span class="tag">DigitalOcean Droplets</span>
-                            <span class="tag">Docker Containers</span>
-                            <span class="tag">Git & GitLab</span>
-                            <span class="tag">Visual SVN</span>
-                            <span class="tag">HAProxy</span>
-                            <span class="tag">Sonarqube</span>
-                            <span class="tag">PM2 Process Manager</span>
-                        </div>
-                    </div>
-
-                    <!-- Virtualization & Enterprise IT -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="server" class="skill-icon accent-purple"></i>
-                            <h3>Virtualization & Enterprise IT</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">VMware ESXi 6.x</span>
-                            <span class="tag">VMware Workstation</span>
-                            <span class="tag">Oracle VirtualBox (Headless)</span>
-                            <span class="tag">Ivanti UEM (Certified)</span>
-                            <span class="tag">Ivanti Automation (Certified)</span>
-                            <span class="tag">Ivanti Identity & Service Manager</span>
-                            <span class="tag">Ivanti Asset Manager & Xtraction</span>
-                            <span class="tag">MDM (Android & iOS DEP/VPP)</span>
-                        </div>
-                    </div>
-
-                    <!-- Web Hosting & Servers -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="globe" class="skill-icon accent-cyan"></i>
-                            <h3>Web Hosting & Servers</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">WHM & cPanel</span>
-                            <span class="tag">Parallel Plesk (Win/Linux)</span>
-                            <span class="tag">Apache2</span>
-                            <span class="tag">Nginx</span>
-                            <span class="tag">Microsoft IIS</span>
-                            <span class="tag">DNS & DHCP Management</span>
-                            <span class="tag">Domain Records Control</span>
-                            <span class="tag">Ajenti & WordPress</span>
-                        </div>
-                    </div>
-
-                    <!-- Databases & Backup -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="database" class="skill-icon accent-green"></i>
-                            <h3>Databases & Storage</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">MySQL & MariaDB</span>
-                            <span class="tag">Microsoft SQL Server (SSMS)</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">Auto Backup & Restoration</span>
-                            <span class="tag">Full / Incremental Backups</span>
-                            <span class="tag">Differential & Mirror Backups</span>
-                        </div>
-                    </div>
-
-                    <!-- OS, Scripting & Security -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="shield-check" class="skill-icon accent-pink"></i>
-                            <h3>OS, Scripting & Security</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">Linux OS (Ubuntu, CentOS)</span>
-                            <span class="tag">Windows Server & Active Directory</span>
-                            <span class="tag">Bash & Batch Scripting</span>
-                            <span class="tag">PowerShell Automation</span>
-                            <span class="tag">SonicWALL UTM Firewalls</span>
-                            <span class="tag">Nagios & Monit</span>
-                            <span class="tag">RocketChat & Openfire</span>
-                        </div>
-                    </div>
-
-                    <!-- Infrastructure Hardware & Utilities -->
-                    <div class="skill-card glass-card">
-                        <div class="skill-card-header">
-                            <i data-lucide="network" class="skill-icon accent-amber"></i>
-                            <h3>Networking & Hardware</h3>
-                        </div>
-                        <div class="skill-tags">
-                            <span class="tag">WAN & LAN Infrastructure</span>
-                            <span class="tag">WiFi AP & Extender Config</span>
-                            <span class="tag">Door Lock Controllers</span>
-                            <span class="tag">RFID & Fingerprint Systems</span>
-                            <span class="tag">PuTTY, Bitvise, Xshell</span>
-                            <span class="tag">Vendor Coordination</span>
-                        </div>
-                    </div>
+                    <pre class="p-6 font-fira text-[13px] leading-relaxed overflow-x-auto"><code><span class="text-green-color">$</span> <span class="text-white">cat</span> whoami.json
+<span class="text-gray-500">{</span>
+  <span class="text-primary-color">"role"</span>: <span class="text-accent-orange">"Lead System Administrator"</span>,
+  <span class="text-primary-color">"company"</span>: <span class="text-accent-orange">"IConflux Technologies"</span>,
+  <span class="text-primary-color">"location"</span>: <span class="text-accent-orange">"Ahmedabad, IN"</span>,
+  <span class="text-primary-color">"certifications"</span>: [
+    <span class="text-accent-orange">"AWS Solutions Architect"</span>,
+    <span class="text-accent-orange">"Ivanti UEM & Automation"</span>
+  ],
+  <span class="text-primary-color">"focus"</span>: [
+    <span class="text-accent-orange">"Cloud & DevOps"</span>,
+    <span class="text-accent-orange">"Virtualization"</span>,
+    <span class="text-accent-orange">"Docker and Kubernetes"</span>
+  ]
+<span class="text-gray-500">}</span>
+<span class="text-green-color">$</span> <span id="terminal-typing-text" class="text-white"></span><span class="typing-cursor" style="height: 0.9rem"></span></code></pre>
                 </div>
             </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="section-padding">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-badge"><i data-lucide="award"></i> Credentials</div>
-                    <h2 class="section-title">Certifications & Training</h2>
-                    <p class="section-subtitle">Verified technical certifications and professional training achievements.</p>
-                </div>
-
-                <div class="cert-grid">
-                    <div class="cert-card glass-card">
-                        <div class="cert-badge-icon"><i data-lucide="award" class="accent-amber"></i></div>
-                        <div class="cert-info">
-                            <h3>Ivanti Unified Endpoint Management</h3>
-                            <span class="cert-issuer"><i data-lucide="check-circle"></i> Certified Professional</span>
-                            <p>Certified in deploying, managing, and troubleshooting Ivanti UEM across enterprise environments.</p>
-                        </div>
-                    </div>
-
-                    <div class="cert-card glass-card">
-                        <div class="cert-badge-icon"><i data-lucide="award" class="accent-blue"></i></div>
-                        <div class="cert-info">
-                            <h3>Ivanti Automation Specialist</h3>
-                            <span class="cert-issuer"><i data-lucide="check-circle"></i> Certified Professional</span>
-                            <p>Certified in automated task execution, resource management, and workflow automation.</p>
-                        </div>
-                    </div>
-
-                    <div class="cert-card glass-card">
-                        <div class="cert-badge-icon"><i data-lucide="award" class="accent-cyan"></i></div>
-                        <div class="cert-info">
-                            <h3>AWS Solutions Architect – Associate</h3>
-                            <span class="cert-issuer"><i data-lucide="check-circle"></i> Certified Professional</span>
-                            <p>Comprehensive training and real-world deployment across AWS cloud infrastructure services.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Timeline Section -->
-        <section id="experience" class="section-padding alt-bg">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-badge"><i data-lucide="history"></i> Career Journey</div>
-                    <h2 class="section-title">Work Experience</h2>
-                    <p class="section-subtitle">Over 9 years of system administration, DevOps engineering, and infrastructure operations.</p>
-                </div>
-
-                <div class="timeline">
-
-                    <!-- Company 1: IConflux -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content glass-card">
-                            <div class="company-header">
-                                <div>
-                                    <h3 class="company-name">IConflux Technologies Pvt Ltd</h3>
-                                    <span class="company-location"><i data-lucide="map-pin"></i> Ahmedabad, Gujarat, India</span>
-                                </div>
-                                <span class="tenure-badge">Jul 2017 – Present (8+ yrs)</span>
-                            </div>
-
-                            <!-- Roles within IConflux -->
-                            <div class="roles-container">
-                                <div class="role-box active-role">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">Lead System Administrator (DevOps)</h4>
-                                        <span class="role-dates">Apr 2023 – Present · 3 yrs 4 mos</span>
-                                    </div>
-                                </div>
-
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">Lead System Administrator</h4>
-                                        <span class="role-dates">Jan 2021 – Mar 2023 · 2 yrs 3 mos</span>
-                                    </div>
-                                </div>
-
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">Senior System Administrator</h4>
-                                        <span class="role-dates">Jan 2019 – Dec 2020 · 2 yrs</span>
-                                    </div>
-                                </div>
-
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">System & Network Administrator</h4>
-                                        <span class="role-dates">Jul 2017 – Dec 2018 · 1 yr 6 mos</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="experience-details">
-                                <h5>Key Responsibilities & Accomplishments:</h5>
-                                <ul class="bullet-list">
-                                    <li>Monitoring and managing IT Infrastructure across multiple physical and cloud locations with zero downtime goals.</li>
-                                    <li>Architected cloud infrastructure on AWS (EC2, S3, IAM, CloudWatch, RDS, VPC, Route 53, SNS, SQS, AMI snapshots) and DigitalOcean droplets.</li>
-                                    <li>Implemented Docker container environments for efficient deployment of microservices and applications.</li>
-                                    <li>Expert administration of Web hosting servers: WHM, cPanel & Plesk, full DNS domain management, and DHCP configurations.</li>
-                                    <li>Managed code repositories using GitLab and Visual SVN for development teams.</li>
-                                    <li>Configured and maintained enterprise third-party applications: HAProxy load balancers, Nagios & Monit monitoring systems, PM2, headless Oracle VirtualBox, VMware ESXi6, Sonarqube code quality analyzer, RocketChat, Openfire, Ajenti, and WordPress.</li>
-                                    <li>Created Bash and Batch automated scripts for auto-backup & restoration of enterprise databases: MSSQL, MySQL, PostgreSQL, and MongoDB.</li>
-                                    <li>Managed installation and configuration of web servers and mail components: Apache2, IIS, Nginx, SMTP, PHP, XAMPP, LAMP, MAMP.</li>
-                                    <li>Configured and secured WiFi devices (APs, extenders, routers) and UTM firewalls (Dell SonicWALL, Windows & Linux advanced firewalls).</li>
-                                    <li>Monitored WAN/LAN links, application filtering, door lock controllers, RFID cards, and biometric fingerprint attendance machines.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Company 2: ACIS_IT -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content glass-card">
-                            <div class="company-header">
-                                <div>
-                                    <h3 class="company-name">ACIS Information Technology</h3>
-                                    <span class="company-location"><i data-lucide="map-pin"></i> Green Community Village, Dubai, UAE</span>
-                                </div>
-                                <span class="tenure-badge">Nov 2017 – May 2023 (5 yrs 7 mos)</span>
-                            </div>
-
-                            <div class="roles-container">
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">Senior System Engineer</h4>
-                                        <span class="role-dates">Mar 2022 – May 2023 · 1 yr 3 mos</span>
-                                    </div>
-                                </div>
-
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">System Administrator</h4>
-                                        <span class="role-dates">Nov 2017 – Mar 2022 · 4 yrs 5 mos</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="experience-details">
-                                <h5>Key Responsibilities & Accomplishments:</h5>
-                                <ul class="bullet-list">
-                                    <li>Served as System Engineer & Administrator with ACIS IT, Platinum Partner of Ivanti, providing expert deployment and customer production support.</li>
-                                    <li>Managed and deployed Ivanti Enterprise Suite: Ivanti Unified Endpoint Management (Certified ✔), Ivanti Automation (Certified ✔), Data Center Discovery, Identity Director, Service Manager, Asset Manager, and Xtraction.</li>
-                                    <li>Windows Server Management: IIS web server configuration and performance troubleshooting, SSL certificate management, Active Directory user administration, and GPO monitoring.</li>
-                                    <li>SQL Server (SSMS): Designed complex SQL queries, monitored database and server performance, constructed maintenance and recovery plans, and analyzed SQL trace files.</li>
-                                    <li>Mobile Device Management (MDM): Configured Android & iOS enterprise enrollment (DEP, VPP, Android for Work).</li>
-                                    <li>Automated recurring server administration tasks using PowerShell scripts and maintained VMware virtual machine infrastructure.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Company 3: Sigmate Informatics -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content glass-card">
-                            <div class="company-header">
-                                <div>
-                                    <h3 class="company-name">Sigmate Informatics Pvt. Ltd.</h3>
-                                    <span class="company-location"><i data-lucide="map-pin"></i> C.G. Road, Ahmedabad, Gujarat, India</span>
-                                </div>
-                                <span class="tenure-badge">Jun 2015 – Jun 2017 (2 yrs 1 mo)</span>
-                            </div>
-
-                            <div class="roles-container">
-                                <div class="role-box">
-                                    <div class="role-title-row">
-                                        <h4 class="role-title">System and Network Administrator</h4>
-                                        <span class="role-dates">Jun 2015 – Jun 2017 · Full-time</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="experience-details">
-                                <h5>Key Responsibilities & Accomplishments:</h5>
-                                <ul class="bullet-list">
-                                    <li>Managed complete IT Infrastructure and control panel environments (WHM, cPanel, Parallel Plesk Windows).</li>
-                                    <li>Installed and configured Windows and Linux servers, web servers (IIS, Apache), and databases (MySQL, MSSQL).</li>
-                                    <li>Handled SQL Database server management, scheduled automated backups, and executed recovery procedures.</li>
-                                    <li>Managed Windows/Linux web hosting environments hosted on AWS, GoDaddy, and Cloudflare.</li>
-                                    <li>Implemented backup policies across servers (Full, Incremental, Differential, and Mirror backups).</li>
-                                    <li>Maintained virtualization infrastructure utilizing VMware Workstation and ESXi6.</li>
-                                    <li>Managed enterprise antivirus deployments (Avast, Kaspersky, Quick Heal, Seqrite) and resolved LAN/WAN network issues.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Portals & Link Hub Section -->
-        <section id="portals" class="section-padding">
-            <div class="section-container">
-                <div class="section-header">
-                    <div class="section-badge"><i data-lucide="link"></i> Digital Portals</div>
-                    <h2 class="section-title">Portals & Social Links</h2>
-                    <p class="section-subtitle">Quick access to all codebases, video guides, tech blogs, and social handles.</p>
-                </div>
-
-                <!-- Instant Filter Panel -->
-                <div class="search-panel-container">
-                    <div class="search-bar-wrapper glass-card">
-                        <i data-lucide="search" class="search-icon"></i>
-                        <input type="text" id="linkSearchInput" placeholder="Type to filter portals (e.g. GitHub, Blog, YouTube)..." autocomplete="off" aria-label="Search Portals">
-                        <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search" style="display: none;">
-                            <i data-lucide="x"></i>
-                        </button>
-                        <span class="search-keyboard-hint">Press <kbd>/</kbd> anywhere to search</span>
-                    </div>
-                </div>
-
-                <!-- Group 1: Social & Professional Channels -->
-                <div class="portal-group">
-                    <h3 class="portal-group-title">
-                        <i data-lucide="share-2" class="group-title-icon"></i>
-                        Connect & Channels
-                    </h3>
-                    <div class="links-grid">
-                        
-                        <!-- GitHub Card -->
-                        <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="github code open source projects devops repositories version control meibraransari">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-blue-bg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-blue">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">GitHub</h3>
-                                    <p class="card-desc">Public repositories, DevOps automation scripts, Dockerfiles, and code samples.</p>
-                                    <span class="card-subtext">@meibraransari</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- LinkedIn Card -->
-                        <a href="http://www.linkedin.com/in/ansariibrar" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="linkedin professional connect network career profile resume cv work ansariibrar">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-purple-bg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-purple">
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">LinkedIn</h3>
-                                    <p class="card-desc">Professional network, endorsements, corporate updates, and career history.</p>
-                                    <span class="card-subtext">in/ansariibrar</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- YouTube Card -->
-                        <a href="https://www.youtube.com/@DevOpsinAction?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="youtube video tutorials devops action channel guides docker kubernetes ci cd">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-pink-bg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="card-icon accent-pink">
-                                        <path d="M23.498 6.163c-.272-1.016-1.071-1.815-2.087-2.087-1.838-.498-9.213-.498-9.213-.498s-7.375 0-9.213.498c-1.016.272-1.815 1.071-2.087 2.087-.498 1.838-.498 5.674-.498 5.674s0 3.836.498 5.674c.272 1.016 1.071 1.815 2.087 2.087 1.838.498 9.213.498 9.213.498s7.375 0 9.213-.498c1.016-.272 1.815-1.071 2.087-2.087.498-1.838.498-5.674.498-5.674s0-3.836-.498-5.674zm-14.16 8.358v-6.757l6.213 3.378-6.213 3.379z"/>
-                                    </svg>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">YouTube Channel</h3>
-                                    <p class="card-desc">DevOps in Action tutorials, containerization walkthroughs, and server guides.</p>
-                                    <span class="card-subtext">@DevOpsinAction</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Tech Blog Card -->
-                        <a href="https://ibraransari.blogspot.com/" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="blog articles writeups tech news system design ibrar blogger lessons guides logs">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-cyan-bg">
-                                    <i data-lucide="book-open" class="card-icon accent-cyan"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Tech Blog</h3>
-                                    <p class="card-desc">Technical writeups, DevOps notes, database disaster recovery strategies, and cloud tips.</p>
-                                    <span class="card-subtext">ibraransari.blogspot.com</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Telegram Card -->
-                        <a href="https://t.me/DevOpsinActionTelegram" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="telegram chat support group channel community updates automation devs text">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-blue-bg">
-                                    <i data-lucide="send" class="card-icon accent-blue"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Telegram Community</h3>
-                                    <p class="card-desc">Join the DevOps in Action discussion group for real-time updates and discussions.</p>
-                                    <span class="card-subtext">@DevOpsinActionTelegram</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Docker Hub Card -->
-                        <a href="https://hub.docker.com/u/ibraransaridocker" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="docker hub containers images build kubernetes registry packages dockerfile">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-purple-bg">
-                                    <i data-lucide="container" class="card-icon accent-purple"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Docker Hub</h3>
-                                    <p class="card-desc">Public Docker images, base runtime containers, and customized service packages.</p>
-                                    <span class="card-subtext">ibraransaridocker</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- Group 2: Open Source Work & Packages -->
-                <div class="portal-group">
-                    <h3 class="portal-group-title">
-                        <i data-lucide="code-2" class="group-title-icon"></i>
-                        Open Source Projects & Work
-                    </h3>
-                    <div class="links-grid">
-
-                        <!-- KubeKosh Card -->
-                        <a href="https://github.com/zeborg/kubekosh" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="kubernetes k8s learning lab classroom cka ckad cks kubekosh docker container interactive terminal testing simulator">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-blue-bg">
-                                    <img src="assets/logos/kubernetes.svg" alt="Kubernetes Logo" class="card-icon">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">KubeKosh</h3>
-                                    <p class="card-desc">Interactive, self-hosted Kubernetes learning playground containerized in a single Docker image.</p>
-                                    <span class="card-subtext">zeborg/kubekosh</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- FTP Server Card -->
-                        <a href="https://github.com/meibraransari/ftp-server" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="ftp server file sharing transport files transfer repository open source docker compose">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-blue-bg">
-                                    <i data-lucide="folder-sync" class="card-icon accent-blue"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">FTP Server</h3>
-                                    <p class="card-desc">Lightweight, multi-user FTP server setup for rapid file transfer and sharing.</p>
-                                    <span class="card-subtext">meibraransari/ftp-server</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- SFTP Server Docker Card -->
-                        <a href="https://github.com/meibraransari/sftp-server-docker" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="sftp server secure docker container transfer ssh keys password credentials">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-cyan-bg">
-                                    <i data-lucide="shield-check" class="card-icon accent-cyan"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">SFTP Server Docker</h3>
-                                    <p class="card-desc">Secure FTP server packaged in Docker supporting password and key-based SSH auth.</p>
-                                    <span class="card-subtext">meibraransari/sftp-server-docker</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Ansible Playground Docker Card -->
-                        <a href="https://github.com/meibraransari/ansible-playground-docker" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="ansible automation playground docker orchestration sandbox lab testing playbooks">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-amber-bg">
-                                    <img src="assets/logos/ansible.svg" alt="Ansible Logo" class="card-icon">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Ansible Playground</h3>
-                                    <p class="card-desc">Docker-based multi-container playground environment for testing Ansible playbooks.</p>
-                                    <span class="card-subtext">meibraransari/ansible-playground-docker</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Dotfiles Card -->
-                        <a href="https://github.com/meibraransari/dotfiles" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="dotfiles configurations config settings sh bash zsh terminal setup scripts profile environment">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-purple-bg">
-                                    <i data-lucide="terminal" class="card-icon accent-purple"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Dotfiles</h3>
-                                    <p class="card-desc">Personal configuration files, shell shortcuts, aliases, and development environment setups.</p>
-                                    <span class="card-subtext">meibraransari/dotfiles</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                        <!-- Vim Ninja Card -->
-                        <a href="https://github.com/meibraransari/vim-ninja" target="_blank" rel="noopener noreferrer" class="link-card glass-card" data-tags="vim ninja editor setup keyboard configuration text editor keybindings coding speed">
-                            <div class="card-content">
-                                <div class="card-icon-wrapper accent-green-bg">
-                                    <img src="assets/logos/vim.svg" alt="Vim Logo" class="card-icon">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title">Vim Ninja</h3>
-                                    <p class="card-desc">High-speed editor settings and customized Vim keybindings for ninja-level coding.</p>
-                                    <span class="card-subtext">meibraransari/vim-ninja</span>
-                                </div>
-                                <i data-lucide="arrow-up-right" class="card-arrow"></i>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-                <!-- No Results Fallback -->
-                <div id="noResultsMessage" class="no-results-panel glass-card" style="display: none;">
-                    <i data-lucide="search-x" class="warning-icon"></i>
-                    <h3>No Portals Found</h3>
-                    <p>No link matched your query. Try searching for "GitHub", "LinkedIn", or "DevOps".</p>
-                    <button id="resetSearchBtn" class="btn btn-sm btn-secondary">Reset Filter</button>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
+    <!-- Stats Section -->
+    <section id="stats" aria-label="Key impact metrics" class="container mx-auto px-6 -mt-6 mb-12">
+        <div class="stats-row-container">
+            <div class="stat-card-custom stats-row-card flex flex-col justify-center">
+                <div class="stat-card-accent"></div>
+                <p class="stat-value grad-text-blue-purple">~9+ Yrs</p>
+                <p class="text-white font-bold mt-3 text-base">Enterprise Experience</p>
+                <p class="text-gray-500 font-fira mt-1 text-xs">SysAdmin & DevOps Specialist</p>
+            </div>
+            <div class="stat-card-custom stats-row-card flex flex-col justify-center">
+                <div class="stat-card-accent"></div>
+                <p class="stat-value grad-text-cyan-blue">1000+</p>
+                <p class="text-white font-bold mt-3 text-base">Servers Managed</p>
+                <p class="text-gray-500 font-fira mt-1 text-xs">AWS, VMware ESXi & Proxmox</p>
+            </div>
+            <div class="stat-card-custom stats-row-card flex flex-col justify-center">
+                <div class="stat-card-accent"></div>
+                <p class="stat-value grad-text-yellow-orange">99.9%</p>
+                <p class="text-white font-bold mt-3 text-base">Uptime SLA Achieved</p>
+                <p class="text-gray-500 font-fira mt-1 text-xs">Zero Unplanned Downtime</p>
+            </div>
+            <div class="stat-card-custom stats-row-card flex flex-col justify-center">
+                <div class="stat-card-accent"></div>
+                <p class="stat-value grad-text-blue-cyan">500+</p>
+                <p class="text-white font-bold mt-3 text-base">Automated Workflows</p>
+                <p class="text-gray-500 font-fira mt-1 text-xs">jenkins & Ivanti UEM</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="deal" aria-label="DevOps in Action Channels" class="container mx-auto px-6 mb-12">
+        <a href="https://www.youtube.com/@DevOpsinAction" target="_blank" rel="noopener noreferrer" class="tech-card banner-pulse p-6 rounded-xl flex flex-col md:flex-row items-center gap-6 group relative overflow-hidden">
+            <div class="w-12 h-12 rounded-lg bg-primary-color/10 border border-primary-color/25 flex items-center justify-center text-primary-color flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <i data-feather="youtube" class="w-6 h-6 text-[#ff0000]" style="filter: drop-shadow(0 0 8px rgba(255,0,0,0.5));"></i>
+            </div>
+            
+            <div class="flex-grow">
+                <div class="flex flex-wrap items-center gap-3 mb-1.5">
+                    <span class="font-fira font-bold text-white tracking-wide text-xs bg-primary-color/10 text-primary-color py-0.5 px-2.5 rounded-full border border-primary-color/20">DEVOPS IN ACTION</span>
+                    <!-- <span class="text-xs text-gray-500 font-fira">3.8k+ subscribers</span> -->
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Practical tutorials covering inustry standard DevOps, Linux server setups, Docker containerization, and production deployment automations. Join the community to level up your DevOps skills.
+                </p>
+            </div>
+
+            <div class="flex-shrink-0 flex items-center gap-2 font-fira text-xs uppercase tracking-wider text-primary-color group-hover:text-white bg-primary-color/5 border border-primary-color/20 px-4 py-2.5 rounded-lg group-hover:border-primary-color/60 transition-all duration-300">
+                <span>Subscribe</span>
+                <i data-feather="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+            </div>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading mb-12">
+                <h2 class="font-fira"><span class="num">01.</span><span class="gradient-text">About Me</span></h2>
+            </div>
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 text-center flex-shrink-0 relative">
+                    <div class="absolute inset-0 -z-10 blur-3xl opacity-60" aria-hidden="true">
+                        <div class="w-full h-full rounded-full" style="background: radial-gradient(circle, rgba(88,166,255,0.45), transparent 65%);"></div>
+                    </div>
+                    <div class="relative inline-block rounded-2xl p-[2px]" style="background: linear-gradient(135deg, #58a6ff, #a371f7, #f47b20);">
+                        <img src="avatar.png" alt="Portrait of Ibrar Ansari" loading="lazy" decoding="async" width="240" height="240" class="rounded-2xl w-48 h-48 md:w-60 md:h-60 object-cover bg-bg-color block">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-300 mb-4 font-fira">
+                        Hi, I'm Ibrar, an experienced Lead System Administrator and DevOps Engineer with over <span class="text-white font-semibold">9 years</span> of hands-on experience in information technology. 
+                    </p>
+                    <p class="text-lg text-gray-300 mb-4">
+                        I specialize in cloud infrastructure architecture (AWS &amp; DigitalOcean), containerization (Docker), continuous integration &amp; delivery (CI/CD), virtualization (Proxmox and VMware ESXi), web hosting server management (WHM/cPanel/Plesk), and enterprise endpoint management (Ivanti UEM suite).
+                    </p>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Throughout my career across leading IT organizations in India, the US, and the UAE, I have successfully delivered high-availability solutions, implemented infrastructure monitoring with Zabbix and Grafana, deployed containerized microservices using Docker, and integrated third-party enterprise applications.
+                    </p>
+                    <div class="now-line font-fira text-gray-300">
+                        <span class="now-prefix">$ now &gt;</span> deep in AWS Cloud and Kubernetes.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors / Community / Certifications Section -->
+    <section id="honors" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading">
+                <h2 class="font-fira"><span class="num">02.</span><span class="gradient-text">Certifications</span></h2>
+            </div>
+            <p class="section-subtitle">Recognised professional credentials and verified expert certifications.</p>
+
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 stagger" style="--i: 0">
+                <div class="tech-card cert-card-aws p-7 rounded-xl flex flex-col group" style="--i: 0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="chip" style="border-color: rgba(244,123,32,0.45); color: #ffa56a;">
+                            Amazon Web Services · Associate
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background-color: rgba(244,123,32,0.15);">
+                            <i data-feather="cloud" class="text-accent-orange w-6 h-6"></i>
+                        </span>
+                        AWS Solutions Architect
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Certified Solutions Architect Associate (SAA-C03). Expert in designing, building, and deploying highly available, fault-tolerant, and secure systems on AWS.</p>
+                </div>
+                <div class="tech-card cert-card-uem p-7 rounded-xl flex flex-col group" style="--i: 1;">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="chip" style="border-color: rgba(88,166,255,0.45); color: #79a8ff;">
+                            Ivanti · Certified Professional
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background-color: rgba(88,166,255,0.15);">
+                            <i data-feather="shield" class="text-primary-color w-6 h-6"></i>
+                        </span>
+                        Unified Endpoint Management
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Certified in deploying, managing, and troubleshooting Ivanti Unified Endpoint Management (UEM) across large-scale enterprise production environments.</p>
+                </div>
+                <div class="tech-card cert-card-automation p-7 rounded-xl flex flex-col group" style="--i: 2;">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="chip" style="border-color: rgba(63,185,80,0.45); color: #8ef7a3;">
+                            Ivanti · Certified Specialist
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg" style="background-color: rgba(63,185,80,0.15);">
+                            <i data-feather="cpu" class="text-green-color w-6 h-6"></i>
+                        </span>
+                        Automation Specialist
+                    </h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Certified in automated task execution, resource provisioning, service orchestration, and maintaining server compliance boundaries in corporate networks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading">
+                <h2 class="font-fira"><span class="num">03.</span><span class="gradient-text">Tech Stack</span></h2>
+            </div>
+            <p class="section-subtitle">The tools, runtimes, and technologies I work with daily to support operations.</p>
+            <div class="max-w-5xl mx-auto space-y-6" id="skills-groups">
+                <!-- Skill groups dynamically injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading mb-16">
+                <h2 class="font-fira"><span class="num">04.</span><span class="gradient-text">Where I've Worked</span></h2>
+            </div>
+            <div class="max-w-3xl mx-auto relative">
+                <div class="absolute left-4 top-0 h-full w-0.5 bg-border-color" aria-hidden="true"></div>
+                <!-- Experience items dynamically injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Portals Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading">
+                <h2 class="font-fira"><span class="num">05.</span><span class="gradient-text">Things I've Built</span></h2>
+            </div>
+            <p class="section-subtitle">A selection of open-source projects, playgrounds, utilities, and configuration setups.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+                <!-- Projects dynamically injected -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing & Talks Section -->
+    <section id="writing" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading">
+                <h2 class="font-fira"><span class="num">06.</span><span class="gradient-text">Writing &amp; Channels</span></h2>
+            </div>
+            <p class="section-subtitle">Check out my technical blog and DevOps community channels.</p>
+
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <a href="https://www.youtube.com/@DevOpsinAction" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">YouTube Channel</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="video" class="text-primary-color w-5 h-5"></i>
+                        DevOps in Action
+                    </h3>
+                    <p class="text-gray-400 text-sm">Educational videos covering system administration tasks, Linux server setups, Docker image building, and production deployment pipeline configurations.</p>
+                </a>
+                <a href="https://ibraransari.blogspot.com/" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">Blogger</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="book-open" class="text-primary-color w-5 h-5"></i>
+                        Tech Blog
+                    </h3>
+                    <p class="text-gray-400 text-sm">Detailed logs and writeups on database backup automations, SonicWALL configurations, and disaster recovery strategies derived from real-world events.</p>
+                </a>
+                <a href="https://ibraransari.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">Hashnode</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="edit-3" class="text-primary-color w-5 h-5"></i>
+                        DevOps Blog
+                    </h3>
+                    <p class="text-gray-400 text-sm">Articles, tutorials, and cloud architecture deep-dives covering Kubernetes, CI/CD pipelines, and modern DevOps tools.</p>
+                </a>
+                <a href="https://t.me/DevOpsinActionTelegram" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">Telegram</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="send" class="text-primary-color w-5 h-5"></i>
+                        Telegram Community
+                    </h3>
+                    <p class="text-gray-400 text-sm">Join the DevOps in Action discussion group for real-time updates, support, and collaborative discussions with other engineers.</p>
+                </a>
+                <a href="https://hub.docker.com/u/ibraransaridocker" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">Docker Registry</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="package" class="text-primary-color w-5 h-5"></i>
+                        Docker Hub Registry
+                    </h3>
+                    <p class="text-gray-400 text-sm">Explore my public Docker images, custom base runtime containers, and packaged deployment services.</p>
+                </a>
+                <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="tech-card p-6 rounded-md flex flex-col group">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-fira bg-primary-color/10 text-primary-color py-1 px-2 rounded-full">GitHub</span>
+                        <i data-feather="external-link" class="text-gray-500 group-hover:text-primary-color w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-feather="github" class="text-primary-color w-5 h-5"></i>
+                        GitHub Profile
+                    </h3>
+                    <p class="text-gray-400 text-sm">Check out my public code repositories, DevOps scripts, Docker orchestration configs, and automation labs.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 section-reveal">
+            <div class="section-heading">
+                <h2 class="font-fira"><span class="num">07.</span><span class="gradient-text">Get In Touch</span></h2>
+            </div>
+            <p class="section-subtitle">Feel free to connect. Whether you have questions regarding systems engineering, Ivanti integrations, or automation ideas, I'm always open to discussing new challenges.</p>
+            <div class="max-w-[340px] mx-auto text-center">
+                <a href="http://www.linkedin.com/in/ansariibrar" target="_blank" rel="noopener noreferrer" class="stat-card-custom block p-8 rounded-xl group transition-all duration-300 relative overflow-hidden" style="border-color: rgba(0, 119, 181, 0.35); background: linear-gradient(135deg, rgba(0, 119, 181, 0.08), rgba(13, 17, 23, 0.7)); text-decoration: none;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #0077b5 0%, #00a0dc 100%);"></div>
+                    <div class="flex flex-col items-center justify-center gap-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center bg-[#0077b5]/10 text-[#0077b5] group-hover:bg-[#0077b5]/20 group-hover:scale-110 transition-all duration-300" style="border: 1px solid rgba(0, 119, 181, 0.25);">
+                            <i data-feather="linkedin" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2 font-fira group-hover:text-primary-color transition-colors">Connect on LinkedIn</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                                Let's collaborate! Feel free to drop a message on LinkedIn.
+                            </p>
+                            <span class="inline-flex items-center gap-2 font-fira text-sm text-[#0077b5] group-hover:underline">
+                                view profile ↗
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-text">&copy; <span id="footer-year">2026</span> Ibrar Ansari. All rights reserved.</p>
-            <p class="footer-credit">Designed &amp; built with care.</p>
+    <footer class="border-t border-border-color mt-10">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-5">
+                    <a href="#" class="font-fira text-lg font-bold text-white">IBRARANSARI</a>
+                    <p class="text-sm text-gray-400 mt-3 max-w-sm leading-relaxed">
+                        Lead System Administrator and DevOps Engineer. Managing secure, automated, high-availability IT infrastructures.
+                    </p>
+                    <div class="status-pill mt-4">
+                        <span class="dot"></span>
+                        Available for collaborations
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <p class="font-fira text-xs uppercase tracking-wider text-gray-500 mb-3">Sitemap</p>
+                    <ul class="space-y-2 text-sm font-fira">
+                        <li><a href="#about" class="text-gray-400 hover:text-primary-color">./about</a></li>
+                        <li><a href="#honors" class="text-gray-400 hover:text-primary-color">./certifications</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-primary-color">./skills</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-primary-color">./experience</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-primary-color">./projects</a></li>
+                        <li><a href="#writing" class="text-gray-400 hover:text-primary-color">./community</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary-color">./contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <p class="font-fira text-xs uppercase tracking-wider text-gray-500 mb-3">Elsewhere</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://github.com/meibraransari" target="_blank" rel="noopener noreferrer" class="chip" aria-label="GitHub profile">
+                            <i data-feather="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                        <a href="http://www.linkedin.com/in/ansariibrar" target="_blank" rel="noopener noreferrer" class="chip" aria-label="LinkedIn profile">
+                            <i data-feather="linkedin" class="w-4 h-4"></i> LinkedIn
+                        </a>
+                        <a href="https://www.youtube.com/@DevOpsinAction" target="_blank" rel="noopener noreferrer" class="chip" aria-label="YouTube channel">
+                            <i data-feather="video" class="w-4 h-4"></i> YouTube
+                        </a>
+                        <a href="https://ibraransari.blogspot.com/" target="_blank" rel="noopener noreferrer" class="chip" aria-label="Tech Blog">
+                            <i data-feather="book-open" class="w-4 h-4"></i> Blogger
+                        </a>
+                        <a href="https://ibraransari.hashnode.dev/" target="_blank" rel="noopener noreferrer" class="chip" aria-label="Hashnode Blog">
+                            <i data-feather="edit-3" class="w-4 h-4"></i> Hashnode
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-border-color flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-fira text-gray-500">
+                <p>&copy; <span id="footer-year"></span> Ibrar Ansari · Designed &amp; built with care.</p>
+                <p class="hidden md:inline-flex items-center gap-2">
+                    <span class="text-gray-600">try</span>
+                    <kbd class="kbd">?</kbd>
+                    <span class="text-gray-600">for keyboard shortcuts</span>
+                </p>
+                <span class="inline-flex items-center gap-4">
+                    <a href="https://github.com/meibraransari/meibraransari.github.io" target="_blank" rel="noopener noreferrer" class="hover:text-primary-color">view source ↗</a>
+                </span>
+            </div>
         </div>
     </footer>
 
+    <!-- Toast Notification HTML -->
+    <div id="toast-notification" role="status" aria-live="polite" class="fixed bottom-20 right-5 bg-green-color text-white py-3 px-6 rounded-lg shadow-lg opacity-0 transform translate-y-5 z-50 font-fira" style="background-color: var(--green-color);">
+        <i data-feather="check-circle" class="inline-block mr-2"></i><span id="toast-message">Message sent successfully!</span>
+    </div>
+
+    <!-- Back-to-top button -->
+    <button id="back-to-top" aria-label="Scroll back to top" type="button">
+        <i data-feather="arrow-up" class="w-5 h-5"></i>
+    </button>
+
     <!-- Command Palette Dialog -->
-    <dialog id="commandPalette" class="command-palette-dialog glass-card">
-        <div class="palette-container">
-            <div class="palette-header">
-                <i data-lucide="search" class="palette-search-icon"></i>
-                <input type="text" id="paletteSearchInput" placeholder="Type to search portals or sections..." autocomplete="off">
-                <button class="palette-close-btn" id="paletteCloseBtn" aria-label="Close palette">
+    <dialog id="commandPalette" class="command-palette-dialog glass-card" style="border: 1px solid var(--border-color); border-radius: 8px; background-color: rgba(1, 4, 9, 0.95); backdrop-filter: blur(12px); color: var(--text-color); font-family: 'Fira Code', monospace; width: 90%; max-width: 600px; padding: 0; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <div class="palette-container" style="display: flex; flex-direction: column;">
+            <div class="palette-header" style="display: flex; align-items: center; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem;">
+                <i data-feather="search" style="color: var(--text-color); margin-right: 0.75rem; width: 1.25rem; height: 1.25rem;"></i>
+                <input type="text" id="paletteSearchInput" placeholder="Type to search portals or sections..." autocomplete="off" style="background: transparent; border: none; outline: none; width: 100%; color: white; font-size: 0.9rem;">
+                <button class="palette-close-btn" id="paletteCloseBtn" aria-label="Close palette" style="color: var(--text-color); background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.75rem;">
                     <kbd>ESC</kbd>
                 </button>
             </div>
-            <div class="palette-body">
-                <div class="palette-section-title">QUICK PORTALS & NAVIGATIONS</div>
-                <ul class="palette-list" id="paletteList">
+            <div class="palette-body" style="max-height: 300px; overflow-y: auto; padding: 0.75rem 0;">
+                <div class="palette-section-title" style="font-size: 0.7rem; color: #8b949e; padding: 0 1rem 0.5rem; letter-spacing: 0.05em; font-weight: bold;">QUICK PORTALS & NAVIGATIONS</div>
+                <ul class="palette-list" id="paletteList" style="list-style: none; margin: 0; padding: 0;">
                     <!-- JS populated items -->
                 </ul>
             </div>
-            <div class="palette-footer">
+            <div class="palette-footer" style="border-top: 1px solid var(--border-color); padding: 0.75rem 1rem; font-size: 0.7rem; color: #8b949e;">
                 <span>Use <kbd>↑</kbd> <kbd>↓</kbd> to navigate, <kbd>Enter</kbd> to select, <kbd>Esc</kbd> to exit.</span>
             </div>
         </div>
     </dialog>
 
-    <!-- Lucide Icons -->
-    <script src="assets/lucide.min.js"></script>
+    <style>
+        /* Dialog Custom styles that aren't dynamic */
+        .command-palette-dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        .palette-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.15s, color 0.15s;
+            font-size: 0.85rem;
+        }
+        .palette-item.selected {
+            background-color: rgba(88, 166, 255, 0.15);
+            color: var(--primary-color);
+        }
+        .palette-item-icon-wrapper {
+            margin-right: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5rem;
+        }
+        .palette-item .item-sub {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: #8b949e;
+        }
+        .palette-item:hover {
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+    </style>
+
     <!-- Script -->
     <script type="module" src="script.js"></script>
 </body>
