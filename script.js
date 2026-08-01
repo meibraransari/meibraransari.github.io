@@ -1,3 +1,5 @@
+import WebGLFluid from 'webgl-fluid';
+
 /**
  * Ibrar Ansari Portfolio & Links Hub - Main Script
  * Optimized for maximum performance (0 lag, 60fps)
@@ -344,5 +346,34 @@ document.addEventListener("DOMContentLoaded", () => {
             openPalette();
         }
     });
+
+    // 7. Footer Year Updater
+    const footerYear = document.getElementById("footer-year");
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
+
+    // 8. Interactive Cursor Spotlight Trail (Subtle aaabadcode-style white smoke trail)
+    const cursorCanvas = document.getElementById("interactive-glow");
+    if (cursorCanvas) {
+        WebGLFluid(cursorCanvas, {
+            TRIGGER: 'hover',
+            IMMEDIATE: false,
+            AUTO: false,
+            INITIAL: false, // Disables initial load splats
+            COLOR_PALETTE: ['#788294'], // Soft slate grey / white that matches the dot grid
+            SPLAT_RADIUS: 0.15, // Compact cursor glow area
+            DENSITY_DISSIPATION: 3.5, // High dissipation for a short, fast-fading smoke trail
+            VELOCITY_DISSIPATION: 0.96, // Fast speed damping
+            PRESSURE: 0.1, // Low pressure bubble
+            CURL: 3, // Clean, elegant flow without chaotic swirls
+            SHADING: true,
+            COLORFUL: false, // Subtle monochromatic smoke
+            PAUSED: false,
+            TRANSPARENT: true,
+            BLOOM: false, // Disabled for pure performance (no GPU lag)
+            SUNRAYS: false // Disabled to ensure zero lag
+        });
+    }
 
 });

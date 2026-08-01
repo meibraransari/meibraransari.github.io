@@ -25,6 +25,9 @@
     <link rel="icon" type="image/png" href="avatar.png">
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fonts.css">
 
     <!-- Stylesheet -->
@@ -35,6 +38,7 @@
     <div class="bg-glow-container" aria-hidden="true">
         <div class="glow-orb orb-primary"></div>
         <div class="glow-orb orb-secondary"></div>
+        <canvas id="interactive-glow"></canvas>
         <div class="bg-grid-overlay"></div>
     </div>
 
@@ -720,6 +724,14 @@
         </section>
 
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">&copy; <span id="footer-year">2026</span> Ibrar Ansari. All rights reserved.</p>
+            <p class="footer-credit">Designed &amp; built with care.</p>
+        </div>
+    </footer>
 
     <!-- Command Palette Dialog -->
     <dialog id="commandPalette" class="command-palette-dialog glass-card">
